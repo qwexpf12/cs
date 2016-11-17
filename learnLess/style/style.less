@@ -1,18 +1,46 @@
+﻿//变量声明
 @nice-blue:#5b83AD;
+@light-gray:#e3e3e3;
 
+body{background-color:@light-gray;}
 .div1{
 	color:@nice-blue;
+	//混合调用
 	.border;
+	//带参数的混合调用
 	.radius(5px);
+	//带默认参数的混合调用
+	.margin-t(20px);
 }
 .border{
 	border-top:1px solid #f99;
 	border-right:1px solid #00f;
 	border-left:1px solid orange;
 	border-bottom:1px solid #333;
+	border-bottom:1px solid #333;
 }
+//带参数的混合声明
 .radius(@value){
 	-webkit-border-radius:@value;
 	-moz-border-radius:@value;
 	border-radius:@value;
+}
+//带默认参数的混合声明
+.margin-t(@topValue:10px){
+	margin-top:@topValue;
+}
+.section{
+	.section-a();
+}
+.section-w100{
+	.section-a(100px;right)
+}
+.section-a(@width:300px;@float:left){
+	width:@width;
+	float:@float;
+	box-shadow:0 0 5px #666;
+	padding:20px;
+	background-color:#FFF;
+	.radius(10px);
+	.margin-t;
 }

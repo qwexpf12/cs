@@ -1,0 +1,84 @@
+Shell命令：
+----------------------------------------------------------------------
+pwd  获取当前所在路径
+ls   列出当前目录下所有文件
+cd ..退出到上一级目录
+mkdir 创建文件夹  例子: mkdir <文件夹名>
+cd <文件夹名>   进入某个文件夹
+
+git命令:
+---------------------------------------------------------------------
+init 初始化版本库
+config 配置
+	--global user.name "Your Name"
+	--global user.email "wangdawei0418@live.cn"
+add <文件名> 提交到缓冲区
+status 状态
+commit 提交  -m "commit message"
+diff <文件名>  检测不同
+log 导出所有版本信息   
+	--pertty=oneline 精简信息
+reset 版本回溯
+	--hard HEAD^
+	--hrad <版本号>
+reflog 列出所有操作所对应的版本号
+checkout -- <文件名> 撤销修改/切换分支
+	
+	checkout -b <分支名> 创建并切换分支	
+	checkout <分支名> 切换分支	
+
+ssh-keygen -t rsa -C "wangdawei0418@live.cn" 创建密钥
+
+remote add origin git@github.com:wangdawei0418/learngit.git 与远程仓库建立链接
+
+push -u origin master 向远端仓库提交内容
+
+
+clone git@项目URL.git
+
+branch 查看当前分支
+branch -d <分支名> 删除分支
+
+
+---------------- 
+branch  查看分支
+branch <分支名> 创建分支
+checkout <分支名> 切换分支
+checkout -b <分支名> 创建并切换
+branch -d <分支名>  删除分支
+       -D <分支名>  强制删除分支
+merge <分支名> 合并某分支到当前分支
+	--no-ff -m "" 禁用fast forward 
+
+stash  临时存储场景
+stash list 查看存储过的临时场景
+stash apply 恢复临时场景
+stash drop  删除临时场景
+stash pop   恢复并删除临时场景
+
+
+--------------------------------
+clone <远程库地址>  牵出仓库
+push 向远程仓库提交
+pull 更新
+config --global alias.<替代命令> <被替代命令>
+
+
+
+
+LESS部分：
+------------------------------------------------
+1.LESS库的引用：
+	less.min.js文件是引入状态
+	less文件的后缀名是.less  
+	<link>标签的 rel属性的属性值是stylesheet/less
+	外部.less文件必须在less.js库之前引入
+2.变量
+	声明变量@变量名:值;
+	引用变量@变量名
+3.混合
+	在一个类中调用另外一个类的样式
+	带有参数的类  例: 声明：.a1(@变量名){width:@变量名};
+			  调用：a1(传参数)
+	带有默认值的参数  .a1(@变量名:默认值)
+	多个参数之间以;分割
